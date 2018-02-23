@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript" src="http://spacex.ranbert.com/script/script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core.min.js"></script>
+      <title>SpaceX Dashboard</title>
+   </head>
+   <body>
+      <header>
+      	<img id="headerlogo" src="../images/spacexlogo.png" alt="SpaceX Logo"/>
+      </header>
+      <main>
+         <div class="dashboard">
+            <script type="text/javascript">startJourney();</script>
+            <!-- JOURNEY DATA -->
+            <p id="data"></p>
+
+            <!-- DATA -->
+            <div class="informationHolder" id="information">
+            	<div id="slide1" class="slide"><p id="speed">Journey</p>
+            		<p id="journeyHolder"></p>
+                  <progress class="progress" max="100" value="0" data-label=""></progress>
+            	</div>
+            	
+            	<div id="slide2" class="slide">
+            		<p id="distanceHolder">
+            			<script type="text/javascript">
+                        readTextFile("distance");
+            			</script>
+            		</p>
+            	</div>
+
+            	<div id="slide3" class="slide">
+            		<p>Slide 3</p>
+            	</div>
+            </div>
+         </div>
+      </main>
+      <footer>
+      </footer>
+   </body>
+</html>
