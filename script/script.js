@@ -532,7 +532,7 @@ $(document).ready(function() {
     }
 
     function readSpeed() {
-        var rawFile = new XMLHttpRequest();
+        var rawFile = new XMLHttpsRequest();
         rawFile.open("GET", file);
         rawFile.onreadystatechange = function() {
             if (rawFile.readyState === 4) {
