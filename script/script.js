@@ -1,5 +1,5 @@
 var pageTitle = "Ranbert's SpaceX Dashboard";
-var file = "http://spacex.ranbert.com/input.txt?ver=1&build5";
+var file = "https://ranberth.github.io/Git-Basics---Ranbert/input.txt?ver=1&build5";
 var attentionCount = 0;
 var attention = false;
 var attentionClear = null;
