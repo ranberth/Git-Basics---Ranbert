@@ -1,5 +1,5 @@
 var pageTitle = "Ranbert's SpaceX Dashboard";
-var file = "https://ranberth.github.io/Git-Basics---Ranbert/input.txt?ver=1&build5";
+var file = "//ranberth.github.io/Git-Basics---Ranbert/input.txt?ver=1&build5";
 var attentionCount = 0;
 var attention = false;
 var attentionClear = null;
@@ -280,7 +280,7 @@ $(document).ready(function() {
 
     function readTextFile(type) {
         var type = type;
-        var rawFile = new XMLHttpsRequest();
+        var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file);
         rawFile.onreadystatechange = function() {
             if (rawFile.readyState === 4) {
@@ -532,7 +532,7 @@ $(document).ready(function() {
     }
 
     function readSpeed() {
-        var rawFile = new XMLHttpsRequest();
+        var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file);
         rawFile.onreadystatechange = function() {
             if (rawFile.readyState === 4) {
