@@ -7,7 +7,7 @@
 
 @font-face {
       font-family: 'DS-DIGI';
-      src: url('https://ranberth.github.io/Git-Basics---Ranbert/css/fonts/DS-DIGI.TTF') format('truetype');
+      src: url('/css/fonts/DS-DIGI.TTF') format('truetype');
       font-weight:400;
       font-style:normal;
 }
@@ -33,7 +33,7 @@
      color:#D4F6FF;
      height: 100%;
      background-color:#070E12;
-     background: url(https://ranberth.github.io/Git-Basics---Ranbert/images/backgroundGradient.png);
+     background: url(/images/backgroundGradient.png);
      background-size: contain;
      background-repeat: repeat-x;
 }
@@ -50,7 +50,7 @@
     height: 44px;
     text-align: center;
     z-index: 5;
-    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/images/spacexlogo.png);
+    background-image: url(/images/spacexlogo.png);
     background-size: auto 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,7 +86,7 @@
     width: 60px;
     height: 44px;
     color: black;
-    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/images/safetybelt.png);
+    background-image: url(/images/safetybelt.png);
     background-position: center;
     background-size: 70%;
     background-repeat: no-repeat;
@@ -103,7 +103,7 @@
     width: 60px;
     height: 44px;
     color: black;
-    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/images/messages.png);
+    background-image: url(/images/messages.png);
     background-position: center;
     background-size: 70%;
     background-repeat: no-repeat;
@@ -311,7 +311,7 @@
     padding-bottom: 10px;
     height: auto;
     font-size: 16px;
-    background: url(https://ranberth.github.io/Git-Basics---Ranbert/images/backgroundtexture1.png) repeat 100% 100%;
+    background: url(/images/backgroundtexture1.png) repeat 100% 100%;
     outline: none;
     box-shadow: inset 0 0 50px 0 rgba(0, 204, 255, 0.5);
 }
@@ -499,6 +499,10 @@
 #o2co2 {
   border:1px solid black;
   background-color: white;
+  width:200px;
+  height:100px;
+  position: relative;
+  display: block;
 }
 
 .speedometerwrapper {
@@ -646,16 +650,28 @@
           width:50%;
         }
 
+        #tipBubble {
+          left: 1308px;
+        }
+
         .dashboard .informationHolder #panel3 {
           grid-template-columns: auto auto;
         }
 
         #fullScreen #panel3 {
-          grid-template-columns: auto auto auto;
+            grid-template-columns: auto auto;
+            padding: 25px;
+        }
+
+        #fullScreen {
+          width: fit-content;
         }
 
         #fullScreen .speedometerwrapper {
-          transform: scale(0.7);
+            transform: scale(1.6);
+            margin: 25px !important;
+            left: -10px !important;
+            position: relative;
         }
 
         #messageButton {
@@ -665,6 +681,23 @@
         #safetybeltButton {
           left: 92%;
         }
+
+        #o2co2Holder {
+            width: 100% !important;
+            margin: 0 auto;
+        }
+
+        #fullScreen #panel4 #o2co2Holder #o2co2 {
+          height: 60vh;
+          width: 100%;
+        }
+
+        .dashboard #panel4 #o2co2Holder #o2co2 {
+          height: 30vh;
+          width: 100%;
+        }
+
+
     }
 
     @media only screen and (max-width: 1067px) and (orientation: landscape){
@@ -674,6 +707,10 @@
         }
         #panel1, #panel2, #panel3, #panel4, #panel5, #panel6 {
           width:95% !important;
+        }
+
+        #fullScreen #panel3 {
+          grid-template-columns: auto auto;
         }
 
         #messageButton {
@@ -688,6 +725,30 @@
           width: 70%;
           margin: 64px auto;
         }
+
+        #o2co2Holder {
+          width: 100% !important;
+          margin: 0 auto;
+        }
+
+        .informationHolder {
+            display: grid;
+            grid-gap: 10px;
+            position: relative;
+            margin: 0 auto;
+            width: 95%;
+            text-align: center;
+            color: #CCECF5;
+            left: -0.5%;
+        }
+
+        #fullScreen {
+            width: fit-content;
+        }
+
+        #tipBubble {
+          left:800px;
+        }
     }
 
     @media only screen and (max-width: 736px) and (orientation: landscape){
@@ -697,6 +758,10 @@
         }
         #panel1, #panel2, #panel3, #panel4, #panel5, #panel6 {
           width:95% !important;
+        }
+
+        #fullScreen #panel3 {
+          grid-template-columns: auto auto;
         }
 
         #messageButton {
@@ -722,6 +787,10 @@
           width:95% !important;
         }
 
+        #fullScreen #panel3 {
+          grid-template-columns: auto auto;
+        }
+
         #messageButton {
           left: 92%;
         }
@@ -737,12 +806,21 @@
     }
 
     @media only screen and (max-width: 640px) and (orientation: landscape){
-        /* My phone: Device with 360x640 px */
          .informationHolder {
              grid-template-columns: auto !important;
         }
         #panel1, #panel2, #panel3, #panel4, #panel5, #panel6 {
           width:auto !important;
+        }
+
+        #fullScreen #panel3 {
+          grid-template-columns: auto auto;
+          width: fit-content !important;
+          padding: 10px;
+        }
+
+        #fullScreen .speedometerwrapper {
+          transform: scale(1);
         }
         
         #messageButton {
@@ -756,23 +834,57 @@
         #attention {
           width: 70%;
           margin: 64px auto;
+        }
+
+        #o2co2Holder {
+            width: 100% !important;
+            margin: 0 auto;
+        }
+
+        #fullScreen #panel4 #o2co2Holder #o2co2 {
+          height: 60vh;
+          width: 100%;
+          transform: scale(0.75);
+        }
+
+        .dashboard #panel4 #o2co2Holder #o2co2 {
+          height: 30vh;
+          width: 100%;
+          transform: scale(0.7);
         }
     }
 
     /* PORTRAIT */
     @media only screen and (max-width: 640px) and (orientation: portrait){
-        /* Device with 480x800 px */
          .informationHolder {
              grid-template-columns: auto !important;
         }
         
-        #panel1, #panel2, #panel3, #panel4, #panel5, #panel6 {
+        #panel1, #panel2, #panel3, #panel4, #panel5 {
           width:auto !important;
+        }
+
+        #fullScreen #panel6 {
+          width:90% !important;
+        }
+
+        #fullScreen {
+          width:85%;
+        }
+
+        #fullScreen .speedometerwrapper {
+          transform: scale(1.0);
+          margin: 35px !important;
+          position: relative;
         }
 
         #panel2, #panel3, #panel4, #panel5, #panel6 {
           height:23px;
           overflow: hidden;
+        }
+
+        #fullScreen #panel3 {
+          grid-template-columns: auto;
         }
 
         #messageButton {
@@ -787,10 +899,28 @@
           width: 70%;
           margin: 64px auto;
         }
+
+        #o2co2Holder {
+            width: 100% !important;
+            margin: 0 auto;
+        }
+
+        #fullScreen #panel4 #o2co2Holder #o2co2 {
+          height: 60vh;
+          width: 100%;
+        }
+
+        .dashboard #panel4 #o2co2Holder #o2co2 {
+          height: 30vh;
+          width: 100%;
+        }
+
+        #tipBubble {
+            left: 358px;
+        }
     }
 
     @media only screen and (max-width: 414px) and (orientation: portrait){
-        /* Device with 414x736 px */
          .informationHolder {
              grid-template-columns: auto !important;
         }
@@ -801,6 +931,10 @@
         #panel2, #panel3, #panel4, #panel5, #panel6 {
           height:23px;
           overflow: hidden;
+        }
+
+        #fullScreen #panel3 {
+          grid-template-columns: auto;
         }
 
         #messageButton {
@@ -818,12 +952,15 @@
     }
 
     @media only screen and (max-width: 412px) and (orientation: portrait){
-        /* Device with 412x734 px */
          .informationHolder {
              grid-template-columns: auto !important
              margin-top: 7px !important;        }
         #panel1, #panel2, #panel3, #panel4, #panel5, #panel6 {
           width:auto !important;
+        }
+
+        #fullScreen #panel3 {
+          grid-template-columns: auto;
         }
 
         #panel2, #panel3, #panel4, #panel5, #panel6 {
@@ -859,6 +996,14 @@
           overflow: hidden;
         }
 
+        #fullScreen #panel3 {
+          grid-template-columns: auto;
+        }
+
+        #fullScreen #panel4 {
+            width: 90% !important;
+        }
+
         #messageButton {
           left: 83%;
         }
@@ -870,5 +1015,27 @@
         #attention {
           width: 70%;
           margin: 64px auto;
+        }
+
+        #o2co2Holder {
+            width: 100% !important;
+            margin: 0 auto;
+        }
+
+        #fullScreen #panel4 #o2co2Holder #o2co2 {
+          height: 60vh;
+          width: 100%;
+        }
+
+        .dashboard #panel4 #o2co2Holder #o2co2 {
+          height: 30vh;
+          width: 100%;
+        }
+
+        #fullScreen .speedometerwrapper {
+            transform: scale(1.6);
+            margin: 0 !important;
+            left: 0 !important;
+            position: relative;
         }
     }

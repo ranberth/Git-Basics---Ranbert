@@ -7,12 +7,21 @@
       <meta name="description" content="Ranbert's SpaceX Dashboard Webapp (fictive): an IT & Design assignment." />
       <link rel="stylesheet" type="text/css" href="css/style.css?ver=1&build=2">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script type="text/javascript" src="https://ranberth.github.io/Git-Basics---Ranbert/script/script.js?ver=2&build4"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <script type="text/javascript" src="http://spacex.ranbert.com/script/script.js?ver=2&build4"></script>
       <link rel="manifest" href="/manifest.json">
       <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
       <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
       <link rel="icon" type="image/png" href="favicon-144x144.png" sizes="144x144">
       <link rel="icon" type="image/png" href="favicon-192x192.png" sizes="192x192">
+      <meta property="og:title" content="Ranbert's SpaceX Dashboard Webapp (fictive)." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://spacex.ranbert.com/" />
+      <meta property="og:image" content="http://spacex.ranbert.com/favicon-300x300.png" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="144" />
+      <meta property="og:image:height" content="144" />
+      <meta property="og:description" content="Ranbert's SpaceX Dashboard Webapp (fictive): an interaction design &amp; technology assignment to prove designing and coding skills."/>
    <body>
       <header>
          <div id="backButton">
@@ -26,7 +35,7 @@
          <h1 id="attentionTitle"></h1>
          <div>
             <div class="iconMessageWrapper">
-               <img id="attentionIcon" src="https://ranberth.github.io/Git-Basics---Ranbert/images/attentionIcon.png" width="50px" height="50px" alt="icon">
+               <img id="attentionIcon" src="images/attentionIcon.png" width="50px" height="50px" alt="icon">
                <p id="attentionMessage"></p>
             </div>
             <div class="buttonWrapper" id="attentionOKButton"><button class="okButton">OK</button></div>
@@ -58,8 +67,8 @@
                   <div class="speed">
                      <p class="label1">Current speed:</p>
                      <div class="speedometerwrapper">
-                        <img src="https://ranberth.github.io/Git-Basics---Ranbert/images/speedometer.png" class="speedometer"/>
-                        <img src="https://ranberth.github.io/Git-Basics---Ranbert/images/speedometerpointer.png" class="pointer"/>
+                        <img src="/images/speedometer.png" class="speedometer"/>
+                        <img src="/images/speedometerpointer.png" class="pointer"/>
                      </div>
                      <div>
                         <p class="info1" id="speedDigital1"></p>
@@ -100,8 +109,8 @@
                      <div>
                         <p class="label1">Current speed:</p>
                         <div class="speedometerwrapper">
-                           <img src="https://ranberth.github.io/Git-Basics---Ranbert/images/speedometer.png" class="speedometer"/>
-                           <img src="https://ranberth.github.io/Git-Basics---Ranbert/images/speedometerpointer.png" class="pointer"/>
+                           <img src="/images/speedometer.png" class="speedometer"/>
+                           <img src="/images/speedometerpointer.png" class="pointer"/>
                         </div>
                         <p class="info1" id="speedDigital2"></p>
                         <sup class="lowcase">km</sup>/<sub class="lowcase">h</sub>
@@ -124,11 +133,35 @@
             </div>
 
                <div id="panel4" class="panel">
-                  <h1>OXYGEN &amp; CARBON DIOXIDE LEVELS</h1>
+                  <h1>Distance & Speed Graph</h1>
                   <div></div>
                   <div>
-                     <div id="o2co2Holder"></div>
-                     <canvas id="o2co2" width="200" height="100">
+                     <div id="o2co2Holder">
+                     <canvas id="o2co2">
+                     <script>
+                          var ctx = document.getElementById('o2co2').getContext('2d');
+                          var chart = new Chart(ctx, {
+                              // The type of chart we want to create
+                              type: 'line',
+
+                              // The data for our dataset
+                              data: {
+                                  labels: ["0 h", "1 h", "2 h", "3 h", "4 h", "5 h", "6 h"],
+                                  datasets: [{
+                                      label: "Distance - KM",
+                                      backgroundColor: 'rgb(42, 107, 254)',
+                                      borderColor: 'rgb(3, 48, 123)',
+                                      data: [0, 6500, 10000, 17500, 28000,30500, 36040],
+                                  }]
+                              },
+
+                              // Configuration options go here
+                              options: {responsive: false, maintainAspectRatio: false, }
+                          });
+
+                          $("#o2co2").css("width","100%");
+                          // $("#o2co2").css("cssText","height: 40vh;");
+                     </script></canvas></div>
                   </div>
                   <div></div>
                </div>
@@ -139,7 +172,7 @@
                   <hr>
                   </div>
                   <div></div>
-                  <div><p>Camera:</br>Spaceshuttle rear camera 1</p><img src="https://ranberth.github.io/Git-Basics---Ranbert/images/camera.gif" alt="camera" id="camera" class="images"/></div>
+                  <div><p>Camera:</br>Spaceshuttle rear camera 1</p><img src="images/camera.gif" alt="camera" id="camera" class="images"/></div>
                   <div></div>
                </div>
 

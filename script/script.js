@@ -1,5 +1,6 @@
 var pageTitle = "Ranbert's SpaceX Dashboard";
-var file = "//ranberth.github.io/Git-Basics---Ranbert/input.txt?ver=1&build5";
+var file = "//spacex.ranbert.com/input.txt?ver=1&build5";
+var theChart = null;
 var attentionCount = 0;
 var attention = false;
 var attentionClear = null;
@@ -128,7 +129,7 @@ $(document).ready(function() {
     }
 
     function dismissScreen() {
-        window.history.pushState("dashboard", pageTitle, "?page=index");
+        window.history.pushState("dashboard", pageTitle, "");
         clicked = false;
         $("#fullScreen").css("opacity", 1).delay(0).animate({
             opacity: 0
@@ -249,35 +250,6 @@ $(document).ready(function() {
         }
     }
 
-    function o2co2Graph() {
-        var c1 = document.getElementById("o2co2");
-        var ctx1 = c1.getContext("2d");
-
-        ctx1.moveTo(10, 80);
-        ctx1.lineTo(0, 90);
-        ctx1.lineWidth = 1;
-        ctx1.strokeStyle = "#ff0000";
-        ctx1.stroke();
-
-        ctx1.moveTo(40, 70);
-        ctx1.lineTo(10, 80);
-        ctx1.lineWidth = 1;
-        ctx1.strokeStyle = "#ff0000";
-        ctx1.stroke();
-
-        ctx1.moveTo(100, 35);
-        ctx1.lineTo(40, 70);
-        ctx1.lineWidth = 1;
-        ctx1.strokeStyle = "#ff0000";
-        ctx1.stroke();
-
-        ctx1.moveTo(200, 100);
-        ctx1.lineTo(100, 35);
-        ctx1.lineWidth = 1;
-        ctx1.strokeStyle = "#ff0000";
-        ctx1.stroke();
-    }
-
     function readTextFile(type) {
         var type = type;
         var rawFile = new XMLHttpRequest();
@@ -298,10 +270,10 @@ $(document).ready(function() {
                                 //$("#distanceHolder").append("</br>" + lines[line]);
                             }
                             if (type == "o2") {
-                                $("#o2co2Holder").html("</br>" + lines[line]);
+                                //$("#o2co2Holder").html("</br>" + lines[line]);
                             }
                             if (type == "co2") {
-                                $("#o2co2Holder").html("</br>" + lines[line]);
+                                //$("#o2co2Holder").html("</br>" + lines[line]);
                             }
 
                             if (type == "passengers") {
@@ -399,8 +371,7 @@ $(document).ready(function() {
             $(".progress").css("visibility", "visible");
 
             readTextFile("distance");
-            readTextFile("o2");
-            o2co2Graph();
+            // readTextFile("o2");
 
             if (percentage < 99 && distance > 0) {
                 $("#journeyProgressPercentage").html("<p class=\"label\">Journey:</p><p class=\"info\">" + percentageR + "%</p>");
@@ -431,7 +402,7 @@ $(document).ready(function() {
             checkAttention(false);
             attentionCount++
             }
-        }, 45000);
+        }, 10000);
     }
 
     function checkAttention(checkState) {
