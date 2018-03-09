@@ -395,7 +395,7 @@ $(document).ready(function() {
         var timer = setInterval(function() {
             //Reload date check for changes during expo:
             readDates();
-        }, 10000);
+        }, 59000);
 
         var reloadThreatSimulation = setInterval(function() {
            if (attentionCount < 2) {
