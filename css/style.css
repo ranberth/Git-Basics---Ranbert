@@ -664,13 +664,17 @@
         }
 
         #fullScreen {
-          width: fit-content;
+          width: 85% !important;
+        }
+
+        #fullScreen #panel4 {
+          width: 85% !important;
         }
 
         #fullScreen .speedometerwrapper {
-            transform: scale(1.6);
-            margin: 25px !important;
-            left: -10px !important;
+            transform: scale(0.9) !important;
+            margin: 0 !important;
+            left: 10% !important;
             position: relative;
         }
 
@@ -709,6 +713,21 @@
           width:95% !important;
         }
 
+        #fullScreen .speedometerwrapper {
+            transform: scale(1) !important;
+            margin: 0 !important;
+            left: 10% !important;
+            position: relative;
+        }
+
+        #fullScreen #panel6 {
+            width: 90% !important;
+        }
+
+        #fullScreen {
+            width: 90% !important;
+        }
+
         #fullScreen #panel3 {
           grid-template-columns: auto auto;
         }
@@ -742,13 +761,11 @@
             left: -0.5%;
         }
 
-        #fullScreen {
-            width: fit-content;
-        }
-
         #tipBubble {
           left:800px;
         }
+
+
     }
 
     @media only screen and (max-width: 736px) and (orientation: landscape){
