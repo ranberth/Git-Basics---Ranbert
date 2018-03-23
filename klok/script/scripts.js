@@ -10,6 +10,7 @@ $(document).ready(function() {
 	var bodyAni = new TimelineMax();
 
 	var clicked = false;
+	var tick = 0;
 
 	var myPointerH = $('#clockHour');
 	var myPointerM = $('#clockMinute');
@@ -145,7 +146,13 @@ $(document).ready(function() {
     	minuteTween.progress(minutesAsSeconds / oneHour);
     	secondTween.progress((theSeconds / sixtySeconds));
 
-    	$("#time").html("Date:&nbsp;" + date + "</br></br>Time:&nbsp;" + hours + ":" + minutes + ":" + seconds);
+    	if (seconds > 0 && seconds < 15) {
+    		$("#time").html("Date:&nbsp;" + date + "</br></br>Time:&nbsp;" + hours + ":" + minutes + ":" + seconds + "&nbsp;GMT+1:00");
+    	} else if (seconds > 15 && seconds < 30) {
+    		$("#time").html("Date:&nbsp;" + date + "</br></br>Time:&nbsp;" + parseInt(hours-5) + ":" + minutes + ":" + seconds + "&nbsp;GMT-4:00");
+    	} else if (seconds > 30 && seconds < 59) {
+    		$("#time").html("Date:&nbsp;" + date + "</br></br>Time:&nbsp;" + parseInt(hours-8) + ":" + minutes + ":" + seconds + "&nbsp;GMT-7:00");
+    	}
 
         switch (seconds) {
         	case 15:
