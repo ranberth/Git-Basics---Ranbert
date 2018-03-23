@@ -7,7 +7,7 @@
 
 @font-face {
       font-family: 'DS-DIGI';
-      src: url('https://ranberth.github.io/Git-Basics---Ranbert/css/fonts/DS-DIGI.TTF') format('truetype');
+      src: url('../css/fonts/DS-DIGI.TTF') format('truetype');
       font-weight:400;
       font-style:normal;
 }
@@ -33,7 +33,7 @@
      color:#D4F6FF;
      height: 100%;
      background-color:#070E12;
-     background: url(https://ranberth.github.io/Git-Basics---Ranbert/images/backgroundGradient.png);
+     background: url(../images/backgroundGradient.png);
      background-size: contain;
      background-repeat: repeat-x;
 }
@@ -50,7 +50,7 @@
     height: 44px;
     text-align: center;
     z-index: 5;
-    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/images/spacexlogo.png);
+    background-image: url(../images/spacexlogo.png);
     background-size: auto 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,7 +86,7 @@
     width: 60px;
     height: 44px;
     color: black;
-    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/images/safetybelt.png);
+    background-image: url(../images/safetybelt.png);
     background-position: center;
     background-size: 70%;
     background-repeat: no-repeat;
@@ -103,7 +103,7 @@
     width: 60px;
     height: 44px;
     color: black;
-    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/images/messages.png);
+    background-image: url(../images/messages.png);
     background-position: center;
     background-size: 70%;
     background-repeat: no-repeat;
@@ -311,7 +311,7 @@
     padding-bottom: 10px;
     height: auto;
     font-size: 16px;
-    background: url(https://ranberth.github.io/Git-Basics---Ranbert/images/backgroundtexture1.png) repeat 100% 100%;
+    background: url(../images/backgroundtexture1.png) repeat 100% 100%;
     outline: none;
     box-shadow: inset 0 0 50px 0 rgba(0, 204, 255, 0.5);
 }
