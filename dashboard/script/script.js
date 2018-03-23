@@ -1,5 +1,5 @@
 var pageTitle = "Ranbert's SpaceX Dashboard";
-var file = "//spacex.ranbert.com/input.txt?ver=1&build5";
+var file = "//ranberth.github.io/Git-Basics---Ranbert/input.txt?ver=1&build5";
 var theChart = null;
 var attentionCount = 0;
 var attention = false;
@@ -395,7 +395,7 @@ $(document).ready(function() {
         var timer = setInterval(function() {
             //Reload date check for changes during expo:
             readDates();
-        }, 10000);
+        }, 59000);
 
         var reloadThreatSimulation = setInterval(function() {
            if (attentionCount < 2) {
