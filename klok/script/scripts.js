@@ -171,10 +171,10 @@ $(document).ready(function() {
     	}
 
     	// Call this function to have the background working with the clock and put function bellow in comment!
-    	prepareBackground(theHours, theMinutes, country);
+	// prepareBackground(theHours, theMinutes, country);
 
     	// Call this function to prepare background according to second as a test trial but put function above in comment!
-    	// testBackground(theSeconds, country);	
+    	testBackground(theSeconds, country);	
 
     	// This function calls the startAnimation again so it will make sure the clock will keep ticking.
         startAnimation();
