@@ -75,7 +75,7 @@ $(document).ready(function() {
 	 * Sets the starting clock image icon
 	 */
 	function initClock() {
-		$(".clockContainer").css("backgroundImage","url(images/clockpanel1.png)");
+		$(".clockContainer").css("backgroundImage","url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/clockpanel1.png)");
 	}
 
 
@@ -88,7 +88,7 @@ $(document).ready(function() {
         }, 0, function(){
         	clockContainer.to('.clockContainer', 0.8, {scale: 1, ease: Bounce.easeOut});
         	TweenMax.to(".clockContainer", 1, 
-	  			{ top: 0, backgroundImage:'url(images/clockpanel.png)', opacity: 1,
+	  			{ top: 0, backgroundImage:'url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/clockpanel.png)', opacity: 1,
 	  			repeat: 0,
 	  			yoyo: true,
 	  			ease: Linear.easeIn
@@ -115,7 +115,7 @@ $(document).ready(function() {
 	            opacity: 0
 	        }, function(){
 	        	$(".clockContainer").css("cssText","transition: background 1s linear;");
-	        	$(".clockContainer").css("backgroundImage","url(images/clockpanel1.png)");
+	        	$(".clockContainer").css("backgroundImage","url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/clockpanel1.png)");
 	        	clockContainerZoomOut.fromTo('.clockContainer', 0.8, 
 		        	{scale: 1.0, opacity: 1.0, repeat: 0, yoyo: false},
 		        	{scale: 0.23, opacity: 0.8, repeat: 0, yoyo: false}
@@ -217,16 +217,16 @@ $(document).ready(function() {
 		var theCountry = country;
 		switch(bg) {
 		    case 1:
-				TweenMax.set(body,{backgroundImage:'url(images/ochtend_'+theCountry+'.png)'});
+				TweenMax.set(body,{backgroundImage:'url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/ochtend_'+theCountry+'.png)'});
 		        break;
 		    case 2:
-				TweenMax.set(body,{backgroundImage:'url(images/middag_'+theCountry+'.png)'});
+				TweenMax.set(body,{backgroundImage:'url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/middag_'+theCountry+'.png)'});
 		        break;
 		    case 3:
-				TweenMax.set(body,{backgroundImage:'url(images/avond_'+theCountry+'.png)'});
+				TweenMax.set(body,{backgroundImage:'url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/avond_'+theCountry+'.png)'});
 				break;
 		    case 4:
-				TweenMax.set(body,{backgroundImage:'url(images/nacht_'+theCountry+'.png)'});
+				TweenMax.set(body,{backgroundImage:'url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/nacht_'+theCountry+'.png)'});
 		        break;
 		    default:
 		}
