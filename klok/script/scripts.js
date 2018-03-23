@@ -36,9 +36,7 @@ $(document).ready(function() {
 	var minuteTween = TweenMax.to(myPointerM, twelveHours, {rotation: "360_cw", ease:Linear.easeNone, repeat:-1, paused: true});
 	var secondTween = TweenMax.to(myPointerS, twelveHours, {rotation: "360_cw", ease:Linear.easeNone, repeat:-1, paused: true});
 
-	animatePage();
-	initClock();
-	startTime();
+	startClock();
 
 	$(".clockContainer").click(function() {
 		if (clicked == false) {
@@ -53,6 +51,18 @@ $(document).ready(function() {
 	});
 
 	/*
+	 * Starts animating the whole page
+	 */
+	function startClock() {
+		setTimeout(function() {
+			animatePage();
+			initClock();
+			startTime();
+		},3000);
+	}
+
+
+	/*
 	 * Animate page with transitions and easing effects
 	 */
 	function animatePage() {
@@ -60,26 +70,14 @@ $(document).ready(function() {
 		bodyAni.to(body, 1, {opacity: 1, top: 0, ease:Bounce.easeOut});
 	}
 
+
 	/*
-	 * Attach background according to time of day
+	 * Sets the starting clock image icon
 	 */
-	function attachBackground(bg) {
-		switch(bg) {
-		    case 1:
-				TweenMax.set(body,{backgroundImage:'url(images/ochtend.png)'});
-		        break;
-		    case 2:
-				TweenMax.set(body,{backgroundImage:'url(images/middag.png)'});
-		        break;
-		    case 3:
-				TweenMax.set(body,{backgroundImage:'url(images/avond.png)'});
-				break;
-		    case 4:
-				TweenMax.set(body,{backgroundImage:'url(images/nacht.png)'});
-		        break;
-		    default:
-		}
+	function initClock() {
+		$(".clockContainer").css("backgroundImage","url(images/clockpanel1.png)");
 	}
+
 
 	/*
 	 * Maximize the Clock
@@ -96,14 +94,6 @@ $(document).ready(function() {
 	  			ease: Linear.easeIn
 	  		});
 		});
-	}
-
-
-	/*
-	 * Sets the starting clock image icon
-	 */
-	function initClock() {
-		$(".clockContainer").css("backgroundImage","url(images/clockpanel1.png)");
 	}
 
 
@@ -128,7 +118,7 @@ $(document).ready(function() {
 	        	$(".clockContainer").css("backgroundImage","url(images/clockpanel1.png)");
 	        	clockContainerZoomOut.fromTo('.clockContainer', 0.8, 
 		        	{scale: 1.0, opacity: 1.0, repeat: 0, yoyo: false},
-		        	{scale: 0.2, opacity: 1.0, repeat: 0, yoyo: false}
+		        	{scale: 0.23, opacity: 0.8, repeat: 0, yoyo: false}
 		        );
 	    }); 
 	}
@@ -138,7 +128,7 @@ $(document).ready(function() {
 	 * This function animates the analog clock with the given variables
 	 */
 	function showTime(hours, minutes, seconds, date) {
-  		var theSeconds = seconds;
+  		var theSeconds = parseInt(seconds);
     	var minutesAsSeconds = minutes * 60;    
     	var hoursAsSeconds = (((hours % 12) + (minutes / 60)) * 60 * 60);
 
@@ -146,35 +136,160 @@ $(document).ready(function() {
     	minuteTween.progress(minutesAsSeconds / oneHour);
     	secondTween.progress((theSeconds / sixtySeconds));
 
-    	if (seconds > 0 && seconds < 15) {
-    		$("#time").html("Date:&nbsp;" + date + "</br></br>Time:&nbsp;" + hours + ":" + minutes + ":" + seconds + "&nbsp;GMT+1:00");
-    	} else if (seconds > 15 && seconds < 30) {
-    		$("#time").html("Date:&nbsp;" + date + "</br></br>Time:&nbsp;" + parseInt(hours-5) + ":" + minutes + ":" + seconds + "&nbsp;GMT-4:00");
-    	} else if (seconds > 30 && seconds < 59) {
-    		$("#time").html("Date:&nbsp;" + date + "</br></br>Time:&nbsp;" + parseInt(hours-8) + ":" + minutes + ":" + seconds + "&nbsp;GMT-7:00");
+        var aruba = calcTime('Aruba','-4.00')[0];
+        var arubaDateTime = dateBeautifier(calcTime('Aruba','-4.00')[1]);
+
+        var netherlands = calcTime('The Netherlands','1.00')[0];
+        var netherlandsDateTime = dateBeautifier(calcTime('The Netherlands','1.00')[1]);
+
+        var losAngeles = calcTime('Los Angeles','-7.00')[0];
+        var losAngelesDateTime = dateBeautifier(calcTime('Los Angeles','-7.00')[1]);
+
+        var country = "launch";
+        var theHours = parseInt(hours);
+        var theMinutes = parseInt(minutes);
+
+    	/*
+    	 * Timezone:
+    	 * 
+    	 * Here the date and time for the three countries I decided to support will rotate for some seconds in a specific
+    	 * I chose. To display an image of the country's view during that hour, a variable country will also be filled in
+    	 * for a later use in the function to attach a background for a change. This is also part of the experience of this clock.
+    	 *
+    	 */
+    	if (theSeconds >= 0 && theSeconds <= 19) {
+    		country = "aruba";
+    		$("#time").html(aruba + ":</br>" + arubaDateTime['date'] + "</br>" + arubaDateTime['h'] + ":" + arubaDateTime['m'] + ":" + arubaDateTime['s'] + " - GMT-4:00");
+    	
+    	} else if (theSeconds >= 20 && theSeconds <= 39) {
+    		country = "thenetherlands";
+    		$("#time").html(netherlands + ":</br>" + netherlandsDateTime['date'] + "</br>" + netherlandsDateTime['h'] + ":" + netherlandsDateTime['m'] + ":" + netherlandsDateTime['s'] + " - GMT+1:00");
+    	
+    	} else if (theSeconds >= 40 && theSeconds <= 59) {
+    		country = "losangeles";
+    		$("#time").html(losAngeles + ":</br>" + losAngelesDateTime['date'] + "</br>" + losAngelesDateTime['h'] + ":" + losAngelesDateTime['m'] + ":" + losAngelesDateTime['s'] + " - GMT-7:00");
     	}
 
-        switch (seconds) {
-        	case 15:
-        		attachBackground(1);
+    	// Call this function to have the background working with the clock and put function bellow in comment!
+    	prepareBackground(theHours, theMinutes, country);
+
+    	// Call this function to prepare background according to second as a test trial but put function above in comment!
+    	// testBackground(theSeconds, country);	
+
+    	// This function calls the startAnimation again so it will make sure the clock will keep ticking.
+        startAnimation();
+  	}
+
+  	/*
+  	 * Function to have the background working with the clock accordingly
+  	 */
+  	function prepareBackground(hours, minutes, country) {
+  		var theHours = parseInt(hours);
+  		var theMinutes = parseInt(minutes);
+  		var theCountry = country;
+
+  		if (parseInt(theHours) > 0 && parseInt(theHours) < 6) {
+  			attachBackground(4, country);
+  		} else if (parseInt(theHours) >= 6 && parseInt(theHours) < 7) {
+  			attachBackground(1, country);
+  		} else if (parseInt(theHours) >= 7 && parseInt(theHours) < 17) {
+  			attachBackground(2, country);
+  		} else if (parseInt(theHours) >= 17 && parseInt(theMinutes) > 29 && parseInt(theHours) < 19) {
+  			attachBackground(3, country);
+  		} else if (parseInt(theHours) >= 19 && parseInt(theHours) <= 23) {
+  			attachBackground(4, country);
+  		}
+
+  	}
+
+
+  	/*
+	 * Attach a background according to time of day for the current country being displayed
+	 *
+	 */
+	function attachBackground(bg, country) {
+		var theCountry = country;
+		switch(bg) {
+		    case 1:
+				TweenMax.set(body,{backgroundImage:'url(images/ochtend_'+theCountry+'.png)'});
+		        break;
+		    case 2:
+				TweenMax.set(body,{backgroundImage:'url(images/middag_'+theCountry+'.png)'});
+		        break;
+		    case 3:
+				TweenMax.set(body,{backgroundImage:'url(images/avond_'+theCountry+'.png)'});
+				break;
+		    case 4:
+				TweenMax.set(body,{backgroundImage:'url(images/nacht_'+theCountry+'.png)'});
+		        break;
+		    default:
+		}
+	}
+
+
+  	/*
+	 * In this there is a switch/case I am attaching background images to a fictive
+	 * day/night time change, separated instead by each 15 seconds.
+	 * This means in a minute you will see images rotating with easing effect.
+	 * See the attachBackground(bg, country) function for details how it is done.
+	 *
+	 */
+  	function testBackground(theSeconds, country) {
+        switch (theSeconds) {
+        	case 0:
+        		attachBackground(1, country);
+        	break;
+
+        	case 5:
+        		attachBackground(2, country);
+        	break;
+
+        	case 10:
+        		attachBackground(3, country);
+        	break;
+
+        	case 14:
+        		attachBackground(4, country);
+        	break;
+
+
+
+        	case 20:
+        		attachBackground(1, country);
+        	break;
+
+        	case 25:
+        		attachBackground(2, country);
         	break;
 
         	case 30:
-        		attachBackground(2);
+        		attachBackground(3, country);
+        	break;
+
+        	case 34:
+        		attachBackground(4, country);
+        	break;
+
+
+
+        	case 40:
+        		attachBackground(1, country);
         	break;
 
         	case 45:
-        		attachBackground(3);
+        		attachBackground(2, country);
         	break;
 
-        	case 59:
-        		attachBackground(4);
+        	case 50:
+        		attachBackground(3, country);
+        	break;
+
+        	case 55:
+        		attachBackground(4, country);
         	break;
 
         	default:
         }
-
-        startAnimation();
   	}
 
 
@@ -196,17 +311,63 @@ $(document).ready(function() {
   	 * This function loads the time and activates the analog clock as well.
   	 */
     function startTime() {
-        var d_names = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
-        var m_names = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    	var input = dateBeautifier(null);
+        var h = input['h'];
+        var m = input['m'];
+        var s = input['s'];
+        var date = input['date'];
 
-        var date = new Date();
+        setTimeout(function() {
+        	showTime(h, m, s, date);
+            startTime();
+        });
+    }
+
+
+    /** 
+	 * Function to calculate local time in a different city given the city's UTC offset
+	 */
+	function calcTime(city, offset) {
+		// Create array for later
+		var placeDateTime = new Array();
+
+	    // create Date object for current location
+	    var d = new Date();
+
+	    // convert to msec add local time zone offset get UTC time in msec
+		var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+	    // create new Date object for different city using supplied offset
+	    var nd = new Date(utc + (3600000*offset));
+
+	    // return time as a string in an array
+	    placeDateTime[0] = city;
+	    placeDateTime[1] = nd;
+	    return placeDateTime; //"The local time in " + city + " is " + nd.toLocaleString();
+	}
+
+	/*
+	 *
+	 */
+	function dateBeautifier(theDate) {
+		var date;
+		if (theDate == null) {
+			date = new Date();
+		} else {
+			date = theDate;
+		}
+
+		var dateTime = new Array();
+
+		var d_names = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        var m_names = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
         var curr_day = date.getDay();
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
         var curr_year = date.getFullYear();
 
-        var today = new Date();
+        var today = date;
         var h = today.getHours();
         var m = today.getMinutes();
         var s = today.getSeconds();
@@ -214,13 +375,16 @@ $(document).ready(function() {
         m = checkTime(m);
         s = checkTime(s);
         curr_date = checkDate(curr_date.toString());
+
         date = (d_names[curr_day] + ", " + m_names[curr_month] + " " + curr_date + " " + curr_year);
-        
-        setTimeout(function() {
-        	showTime(h, m, s, date);
-            startTime();
-        }, 500);
-    }
+
+        dateTime['date'] = date;
+        dateTime['h'] = h;
+        dateTime['m'] = m;
+        dateTime['s'] = s;
+
+        return dateTime;
+	}
 
 
     /*
