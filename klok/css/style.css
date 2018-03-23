@@ -12,17 +12,23 @@
       font-style:normal;
 }
 
+div#preload { display: none; }
+
  html {
      margin:0;
      padding:0;
      min-height:100vh;
      min-width:100%;
-     width: 100%;
+     width: 100% !important;
      -webkit-touch-callout: none;
      -webkit-user-select: none;
      -moz-user-select: none;
      -ms-user-select: none;
      user-select: none;
+}
+
+ html::-webkit-scrollbar, body::-webkit-scrollbar { 
+    display: none; 
 }
 
  body#body {
@@ -32,26 +38,29 @@
     padding:0;
     color:#D4F6FF;
     height: 100%;
+    width: 100% !important;
     transition: background 0.5s linear;
     opacity: 0;
     background-color:#070E12;
-    background-image:url(../images/middag.png);
+    background-image:url(../images/launch.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
     bottom:-100px;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-gap: 0;
 }
 
- html::-webkit-scrollbar, body::-webkit-scrollbar { 
-    display: none; 
-}
  header {
     position: fixed;
     top:-100px;
+    order: 1;
     background-color: #181C1F;
-    width: 100%;
+    width: 100% !important;
     margin: 0 auto;
     padding: 0;
     height: 44px;
@@ -64,13 +73,14 @@
 }
 
  main {
+    position: relative;
+    top:0;
+    order: 2;
     margin:0 auto;
-    width: 100%;
     margin-top: 44px;
     height:100%;
     transition: 0.5s all;
-    position: relative;
-    top:0;
+    width: 100% !important;
   }
 
  .clockContainer {
@@ -125,27 +135,27 @@
  }
 
  #clockHour{
-    background-color:#21A2BD;
+    background-color:#207594;
     box-shadow: 0px 0px 50px 5px #07DBE9;
-    border:1px solid #1FE6FD;
+    border:1px solid #07DBE9;
     top:67px;
     height:88px;
     width:20px;
  }
 
  #clockMinute {
-    background-color:#94E2FF;
+    background-color:#21A2BD;
     box-shadow: 0px 0px 50px 5px #07DBE9;
-    border:1px solid #08D0E9;
+    border:1px solid #1FE6FD;
     top:37px;
     height:118px;
     width:20px;
  }
 
   #clockSecond {
-    background-color:#207594;
+    background-color:#94E2FF;
     box-shadow: 0px 0px 50px 5px #07DBE9;
-    border:1px solid #07DBE9;
+    border:1px solid #08D0E9;
     top:36px;
     height:117px;
     width:15px;
@@ -173,6 +183,14 @@
  #time {
     position: relative;
     text-shadow: 2px 2px 2px #167576;
+    overflow:hidden;
+    white-space: nowrap;
+    width:250px;
+ }
+
+ body, header, main {
+    width: 100vw !important;
+    transition: none;
  }
 
   @media only screen and (max-width: 732px) and (orientation: landscape){
@@ -180,9 +198,13 @@
         width: 500px;
         height: 500px;
         transform: scale(0.7) !important;
-        left: 110px;
-        top: -75px;
+        left: 99px;
+        top: -91px;
         position: relative;
+    }
+
+    body, header, main {
+        width: 100vw !important;
     }
  }
 
@@ -192,27 +214,39 @@
         height: 500px;
         transform: scale(0.7) !important;
         left: 65px;
-        top: -100px;
+        top: -116px;
         position: relative;
     }
+
+    body, header, main {
+        width: 100vw !important;
+     }
  }
 
   @media only screen and (max-width: 412px) and (orientation: portrait){
     .theClock {
-        width:500px;
-        height:500px;
-        transform: scale(0.8) !important;
-        left: -51px;
+        width: 412px;
+        height: 412px;
+        transform: scale(0.78) !important;
+        left: -43px;
         position: relative;
+    }
+
+    body, header, main {
+        width: 100vw !important;
     }
  }
 
   @media only screen and (max-width: 360px) and (orientation: portrait){
     .theClock {
-        width:500px;
-        height:500px;
-        transform: scale(0.7) !important;
-        left: -75px;
+        width: 412px;
+        height: 412px;
+        transform: scale(0.68) !important;
+        left: -63px;
         position: relative;
+    }
+
+    body, header, main {
+        width: 100vw !important;
     }
  }
