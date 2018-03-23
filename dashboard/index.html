@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1">
+      <title>Ranbert's SpaceX Dashboard</title>
+      <meta name="description" content="Ranbert's SpaceX Dashboard Webapp (fictive): an IT & Design assignment." />
+      <link rel="stylesheet" type="text/css" href="css/style.css?ver=1&build=2">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <script type="text/javascript" src="http://spacex.ranbert.com/script/script.js?ver=2&build4"></script>
+      <link rel="manifest" href="/manifest.json">
+      <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="favicon-144x144.png" sizes="144x144">
+      <link rel="icon" type="image/png" href="favicon-192x192.png" sizes="192x192">
+      <meta property="og:title" content="Ranbert's SpaceX Dashboard Webapp (fictive)." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://spacex.ranbert.com/" />
+      <meta property="og:image" content="http://spacex.ranbert.com/favicon-300x300.png" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="144" />
+      <meta property="og:image:height" content="144" />
+      <meta property="og:description" content="Ranbert's SpaceX Dashboard Webapp (fictive): an interaction design &amp; technology assignment to prove designing and coding skills."/>
+   <body>
+      <header>
+         <div id="backButton">
+            <div class="back"></div>
+         </div>
+         <div id="safetybeltButton"></div>
+         <div id="messageButton"></div>
+      </header>
+      <div id="fullScreen"></div>
+      <div class="panel" id="attention">
+         <h1 id="attentionTitle"></h1>
+         <div>
+            <div class="iconMessageWrapper">
+               <img id="attentionIcon" src="images/attentionIcon.png" width="50px" height="50px" alt="icon">
+               <p id="attentionMessage"></p>
+            </div>
+            <div class="buttonWrapper" id="attentionOKButton"><button class="okButton">OK</button></div>
+         </div>
+      </div>
+      <div id="tipBubble">
+         <p>Safety Belt: When you see this safety belt icon, it is mandatory to wear your safety belt.</p>
+      </div>
+      <main>
+         <div class="dashboard">
+            <!-- JOURNEY DATA -->
+            <div class="informationHolder" id="information">
+
+               <div id="panel1" class="panel">
+                  <div>
+                     <h1>General Information</h1>
+                     <hr>
+                     <div class="time"></div>
+                     <hr>
+                     <div id="geninfo"></div>
+                     <hr>
+                     <div class="timeProgressInfo">
+                        <div class="progress1">
+                           <div id="percentageGenInfo"></div>
+                           <progress class="progress" max="100" value="0"></progress>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="speed">
+                     <p class="label1">Current speed:</p>
+                     <div class="speedometerwrapper">
+                        <img src="/images/speedometer.png" class="speedometer"/>
+                        <img src="/images/speedometerpointer.png" class="pointer"/>
+                     </div>
+                     <div>
+                        <p class="info1" id="speedDigital1"></p>
+                        <sup class="lowcase">km</sup>/<sub class="lowcase">h</sub>
+                     </div>
+                     <div>
+                        <p class="label">Average speed: </p>
+                        <p class="info1" id="averageSpeed1"></p>
+                        <sup class="lowcase">km</sup>/<sub class="lowcase">h</sub>
+                        <p class="label">Estimated journey duration: </p>
+                        <p class="info" id="estimatedJourneyDuration1"></p>
+                        <p class="label">Traveled distance: </p>
+                        <p class="info" id="currentDistance1"></p>
+                        <p class="info" id="distKM">&nbsp;km</p>
+                     </div>
+                  </div>
+               </div>
+
+               <div id="panel2" class="panel">
+                  <h1>Journey</h1>
+                  <div></div>
+                  <div id="journeyDates1"></div>
+                  <div class="timeProgressInfo"></div>
+                  <div id="journeyTimes"></div>
+                  <div id="progressWrapper">
+                     <div id="journeyProgressPercentage"></div>
+                     <progress class="progress" max="100" value="0"></progress>
+                  </div>
+
+                  <div></div>
+                  <div></div>
+               </div>
+
+               <div id="panel3" class="panel">
+                  <h1>Distance &amp; Speed</h1>
+                  <div></div>
+                  <div class="speed">
+                     <div>
+                        <p class="label1">Current speed:</p>
+                        <div class="speedometerwrapper">
+                           <img src="/images/speedometer.png" class="speedometer"/>
+                           <img src="/images/speedometerpointer.png" class="pointer"/>
+                        </div>
+                        <p class="info1" id="speedDigital2"></p>
+                        <sup class="lowcase">km</sup>/<sub class="lowcase">h</sub>
+
+                        <p class="label">Average speed: </p>
+                        <p class="info" id="averageSpeed2"></p>
+                        <sup class="lowcase">km</sup>/<sub class="lowcase">h</sub>
+                     </div>
+                  </div>
+
+                  <div>
+                     <p class="label">Estimated journey duration: </p>
+                     <p class="info" id="estimatedJourneyDuration2"></p>
+                     <p class="label">Traveled distance: </p>
+                     <p class="info" id="currentDistance2"></p>
+                     <p class="info" id="distKM">&nbsp;km</p>
+                  </div>
+
+                  <div id="distanceHolder"></div>
+            </div>
+
+               <div id="panel4" class="panel">
+                  <h1>Distance & Speed Graph</h1>
+                  <div></div>
+                  <div>
+                     <div id="o2co2Holder">
+                     <canvas id="o2co2">
+                     <script>
+                          var ctx = document.getElementById('o2co2').getContext('2d');
+                          var chart = new Chart(ctx, {
+                              // The type of chart we want to create
+                              type: 'line',
+
+                              // The data for our dataset
+                              data: {
+                                  labels: ["0 h", "1 h", "2 h", "3 h", "4 h", "5 h", "6 h"],
+                                  datasets: [{
+                                      label: "Distance - KM",
+                                      backgroundColor: 'rgb(42, 107, 254)',
+                                      borderColor: 'rgb(3, 48, 123)',
+                                      data: [0, 6500, 10000, 17500, 28000,30500, 36040],
+                                  }]
+                              },
+
+                              // Configuration options go here
+                              options: {responsive: false, maintainAspectRatio: false, }
+                          });
+
+                          $("#o2co2").css("width","100%");
+                     </script></canvas></div>
+                  </div>
+                  <div></div>
+               </div>
+
+               <div id="panel5" class="panel">
+                  <div>
+                  <h1>CAMERAS</h1>
+                  <hr>
+                  </div>
+                  <div></div>
+                  <div><p>Camera:</br>Spaceshuttle rear camera 1</p><img src="images/camera.gif" alt="camera" id="camera" class="images"/></div>
+                  <div></div>
+               </div>
+
+               <div id="panel6" class="panel">
+                  <h1>MESSAGES</h1>
+                  <hr>
+                  <div id="messagewrapper">
+                     <div>
+                        <div class="subjectTime" id="message3">
+                           <h2>Commet Halley</h2>
+                           <p class="messageTime">Jan 30<sup class="lowcase">th</sup>, 2018 - 20:00:00</p>
+                           <p class="message">Commet Halley just passed by and the trails were spectacular. If you did not manage to see it, check the camera panel which will be updated with the footage.</p>
+                        </div>
+                     </div>
+                     <hr>
+                     <div>
+                        <div class="subjectTime" id="message2">
+                           <h2>Food, beverage &amp; luxury items</h2>
+                           <p class="messageTime">Jan 26<sup class="lowcase">th</sup>, 2018 - 15:45:00</p>
+                           <p class="message">Food and beverage are free, except for alcohol. You can also buy luxury items and participate with activities during the entire
+                           journey to Mars.</p>
+                        </div>
+                     </div>
+                     <hr>
+                     <div>
+                        <div class="subjectTime" id="message1">
+                           <h2>Welcome on board passengers!</h2>
+                           <p class="messageTime">Jan 26<sup class="lowcase">th</sup>, 2018 - 15:15:00</p>
+                           <p class="message">Enjoy the journey from Earth to Mars! On your screen you can check
+                           details of the travel inclucing a camera view during the entire journey. You can see the current speed, average speed, the current date and time and more
+                           other information about the journey.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- END OF JOURNEY DATA -->
+         </div>
+      </main>
+      <audio id="tapSound" hidden auto preload>
+         <source src="sounds/tap1.wav" type="audio/wav">
+      </audio>
+      <div id="theSound"></div>
+   </body>
+</html>

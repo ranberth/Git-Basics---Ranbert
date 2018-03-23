@@ -1,0 +1,218 @@
+@font-face{
+     font-family:brandon-grotesque;
+     src:url(https://use.typekit.com/af/4fc956/0000000000000000000132df/27/l?subset_id=2&fvd=n4&v=3) format("woff2");
+     font-weight:400;
+     font-style:normal;
+}
+
+@font-face {
+      font-family: 'DS-DIGI';
+      src: url('../css/fonts/DS-DIGI.TTF') format('truetype');
+      font-weight:400;
+      font-style:normal;
+}
+
+ html {
+     margin:0;
+     padding:0;
+     min-height:100vh;
+     min-width:100%;
+     width: 100%;
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+}
+
+ body#body {
+    font-family:'DS-DIGI',Helvetica,sans-serif;
+    text-transform: uppercase;
+    margin:0;
+    padding:0;
+    color:#D4F6FF;
+    height: 100%;
+    transition: background 0.5s linear;
+    opacity: 0;
+    background-color:#070E12;
+    background-image:url(../images/middag.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom:-100px;
+}
+
+ html::-webkit-scrollbar, body::-webkit-scrollbar { 
+    display: none; 
+}
+ header {
+    position: fixed;
+    top:-100px;
+    background-color: #181C1F;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 44px;
+    text-align: center;
+    z-index: 5;
+    background-image: url(../images/spacexlogo.png);
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+ main {
+    margin:0 auto;
+    width: 100%;
+    margin-top: 44px;
+    height:100%;
+    transition: 0.5s all;
+    position: relative;
+    top:0;
+  }
+
+ .clockContainer {
+    display: block;
+    position: relative;
+    margin: 20px auto;
+    padding: 8px;
+    text-align: center;
+    transform: scale(0.2);
+    background-image: url(../images/clockpanel.png);
+    background-position: center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    width:500px;
+    height:500px;
+   }
+
+ #clockOuterBorder {
+    position: relative;
+    top:100px;
+    display: none;
+    opacity: 0;
+    width:250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius:50%;
+    box-shadow: 0px 0px 50px 25px #022A70;
+    border:5px solid #95F1FF;
+ }
+
+ #clock {
+    width:inherit;
+    height:inherit;
+    position: relative;
+    background-image: url(../images/clockbackground.png);
+    background-position: center;
+    border-radius:50%;
+    box-shadow: inset 0px 0px 50px 0px #07DBE9;
+ }
+
+ #clockHMS {
+    position: relative;
+    top: -30px;
+    left: 12px;
+    text-align: center;
+ }
+
+ .clock {
+    position:absolute;
+    left:102px;
+    border-radius:50%;
+ }
+
+ #clockHour{
+    background-color:#21A2BD;
+    box-shadow: 0px 0px 50px 5px #07DBE9;
+    border:1px solid #1FE6FD;
+    top:67px;
+    height:88px;
+    width:20px;
+ }
+
+ #clockMinute {
+    background-color:#94E2FF;
+    box-shadow: 0px 0px 50px 5px #07DBE9;
+    border:1px solid #08D0E9;
+    top:37px;
+    height:118px;
+    width:20px;
+ }
+
+  #clockSecond {
+    background-color:#207594;
+    box-shadow: 0px 0px 50px 5px #07DBE9;
+    border:1px solid #07DBE9;
+    top:36px;
+    height:117px;
+    width:15px;
+ }
+
+ .timeLabel {
+    transition: 1s all linear;
+ }
+
+ #clockHMS p {
+    font-weight: bold;
+    margin: 0 auto;
+    border-radius:50%;
+    background-color: #0149C1;
+    border: 1px solid #1FE6FD;
+    box-shadow: 0px 0px 50px 5px #11B7BD;
+    width:32px;
+    height:32px;
+    margin:0 auto;
+    text-align: center;
+    position: relative;
+    left: -8px;
+ }
+
+ #time {
+    position: relative;
+    text-shadow: 2px 2px 2px #167576;
+ }
+
+  @media only screen and (max-width: 732px) and (orientation: landscape){
+    .theClock {
+        width: 500px;
+        height: 500px;
+        transform: scale(0.7) !important;
+        left: 110px;
+        top: -75px;
+        position: relative;
+    }
+ }
+
+  @media only screen and (max-width: 640px) and (orientation: landscape){
+    .theClock {
+        width: 500px;
+        height: 500px;
+        transform: scale(0.7) !important;
+        left: 65px;
+        top: -100px;
+        position: relative;
+    }
+ }
+
+  @media only screen and (max-width: 412px) and (orientation: portrait){
+    .theClock {
+        width:500px;
+        height:500px;
+        transform: scale(0.8) !important;
+        left: -51px;
+        position: relative;
+    }
+ }
+
+  @media only screen and (max-width: 360px) and (orientation: portrait){
+    .theClock {
+        width:500px;
+        height:500px;
+        transform: scale(0.7) !important;
+        left: -75px;
+        position: relative;
+    }
+ }
