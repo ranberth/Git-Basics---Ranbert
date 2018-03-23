@@ -42,7 +42,7 @@ div#preload { display: none; }
     transition: background 0.5s linear;
     opacity: 0;
     background-color:#070E12;
-    background-image:url(../images/launch.png);
+    background-image:url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/launch.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -66,7 +66,7 @@ div#preload { display: none; }
     height: 44px;
     text-align: center;
     z-index: 5;
-    background-image: url(../images/spacexlogo.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/spacexlogo.png);
     background-size: auto 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -90,7 +90,7 @@ div#preload { display: none; }
     padding: 8px;
     text-align: center;
     transform: scale(0.2);
-    background-image: url(../images/clockpanel.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/clockpanel.png);
     background-position: center;
     background-size: 500px;
     background-repeat: no-repeat;
@@ -115,7 +115,7 @@ div#preload { display: none; }
     width:inherit;
     height:inherit;
     position: relative;
-    background-image: url(../images/clockbackground.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/klok/images/clockbackground.png);
     background-position: center;
     border-radius:50%;
     box-shadow: inset 0px 0px 50px 0px #07DBE9;
