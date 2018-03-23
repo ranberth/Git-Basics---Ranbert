@@ -181,7 +181,13 @@ $(document).ready(function() {
   	}
 
   	/*
-  	 * Function to have the background working with the clock accordingly
+  	 * Function to have the background working with the clock accordingly.
+  	 * The background images will all be displaying the image of the day or night time
+  	 * regardless of the real time on Earth. The reason behind this is that Mars travellers
+  	 * need to be active during the day time and would enjoy seeing photos of their country
+  	 * at that time as if it was day time there too and else night time. There are
+  	 * four different photos for the day sequence: morning, noon, afternoon and night. In other
+  	 * words, to stimulate the travellers when to be active and when it is almost night and sleeping time.
   	 */
   	function prepareBackground(hours, minutes, country) {
   		var theHours = parseInt(hours);
