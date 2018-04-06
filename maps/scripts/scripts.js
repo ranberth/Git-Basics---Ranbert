@@ -372,7 +372,7 @@ function toggleBounce(map, marker) {
 
 
 function secondAPI(pokemon) {
-	fetch("http://pokeapi.salestock.net/api/v2/pokemon/?limit=2")
+	fetch("https://ranberth.github.io/Git-Basics---Ranbert/maps/scripts/pokeapi.json")
 
 	// parse to JSON format
 	.then(function(response) {
