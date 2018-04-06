@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpaceX - Landing Place Analyzer</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/TweenMax.min.js?ver=1&build1"></script>
+    <script type="text/javascript" src="scripts/jquery.animate-shadow-min.js"></script>
+    <script type="text/javascript" src="scripts/scripts.js?ver=1&build1"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="favicon-192x192.png" sizes="192x192">
+  </head>
+  <body id="body">
+    <header id="header">
+      <div id="menu" tabindex="1">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="refresh"></div>
+      <div id="tempicon"><div id="temp"></div></div>
+    </header>
+    <main id="main">
+      <section id="right">
+        <div id="popUpWrapper">
+      <div id="glow">
+        <div id="popUp">
+          <h1>Landing Information</br><img src="/images/spacexmarker.png" alt="spacexmarker"/></h1>
+          <p id="content">Information here</p>
+          <div class="buttonWrapper"><button class="okButton" onclick="dismissPopup()">OK</button></div>
+        </div>
+      </div>
+    </div>
+        <div id="map"></div>
+      </section>
+    </main>
+    <nav id="left" tabindex="2">
+        <ul>
+          <h2></h2>
+          <li id="landinginfo">Landing spots</li>
+          <hr>
+          <li id="thehague">Reset map to The Hague</li>
+          <hr>
+          <li id="dashboard"><a href="http://spacex.ranbert.com">Dashboard</a></li>
+          <li id="clock"><a href="http://clock.ranbert.com">Clock</a></li>
+          <h3>SpaceX - Landing Place Analyzer</br>By Ranbert Hernandez</h3>
+        </ul>
+      </nav>
+  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASUySQKFdYbJKvuX2r2dYgqzdPNFy5kzE" async defer></script>
+</html>
