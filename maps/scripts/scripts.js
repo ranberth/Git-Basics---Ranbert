@@ -364,14 +364,14 @@ function toggleBounce(map, marker) {
   */
   function initMap(pokemon){
 
-    firstAPI();
+    openweathermapAPI();
     // setTimeout(function(){
-    	secondAPI(pokemon);
+    	pokemonAPI(pokemon);
     // }, 500);
   }
 
 
-function secondAPI(pokemon) {
+function pokemonAPI(pokemon) {
 	fetch("https://ranberth.github.io/Git-Basics---Ranbert/maps/scripts/pokeapi.json")
 
 	// parse to JSON format
@@ -391,7 +391,7 @@ function secondAPI(pokemon) {
 }
 
 
-function firstAPI() {
+function openweathermapAPI() {
 	fetch("https://api.openweathermap.org/data/2.5/forecast?q=the%20Hague,nl&units=metric&APPID=0e1fa79e84c1e49f820858649108a21c")
 
 	// parse to JSON format
