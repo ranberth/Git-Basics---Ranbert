@@ -1,1 +1,451 @@
+@font-face{
+     font-family:brandon-grotesque;
+     src:url(https://use.typekit.com/af/4fc956/0000000000000000000132df/27/l?subset_id=2&fvd=n4&v=3) format("woff2");
+     font-weight:400;
+     font-style:normal;
+}
 
+ html {
+     margin:0;
+     padding:0;
+     min-height:100vh;
+     min-width:100%;
+     width: 100%;
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     height:100%;
+     overflow: hidden;
+}
+
+       /* Optional: Makes the sample page fill the window. */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family:'Brandon Grotesque','brandon-grotesque',Helvetica,sans-serif;
+    text-transform: uppercase;
+    background-color:#070E12;
+    background: url(/images/backgroundGradient.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    color:#D4F6FF;
+    display:grid;
+    grid-template-columns: auto;
+    grid-gap: 0px;
+    overflow: hidden;
+}
+
+ header {
+    position: fixed;
+    top:0px;
+    order: 1;
+    background-color: #181C1F;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 44px;
+    text-align: center;
+    z-index: 0;
+    background-image: url('../images/spacexlogo.png');
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+
+main {
+		position: relative;
+		top: 44px;
+        height: calc(100% - 44px);
+        order:2;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 0;
+        margin:0;
+        padding:0;
+      }
+
+nav#left {
+    position: absolute;
+    width: 230px;
+    order: 1;
+    background-color: #212121;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top:0;
+    left: -275px;
+    box-shadow: -17px 0px 50px 27px black;
+    outline:none;
+    overflow-y: auto;
+    height:100vh;
+}
+
+nav#left h2 {
+    background-color:#212121;
+    color:#ffffff;
+    margin:0;
+    padding:15px;
+    font-size:16px;
+    background-image:url(/images/headericon.png);
+    background-position: center;
+    background-size:33%;
+    background-repeat: no-repeat;
+    height:75px;
+}
+
+nav#left h3 {
+    background-color: #212121;
+    color: #ffffff;
+    margin: 0;
+    padding: 15px;
+    font-size: 8px;
+    background-image: url(/images/spacexlogo.png);
+    background-position: center 45px;
+    background-size: 33%;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 45px;
+}
+
+nav#left ul {
+    text-transform: none;
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    background-color:#2B2B2B;
+    color:#8D8D8D;
+}
+
+nav#left ul li {
+    padding:8px;
+    border-bottom:1px solid #353535;
+    padding-left:44px;
+}
+
+nav#left ul li a{
+    text-decoration: none;
+    color:#8D8D8D;
+}
+
+nav#left ul li:active  {
+    background-color:#323232;
+}
+
+#temp {
+    position: relative;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 42px;
+    height: 42px;
+    top: 22px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+#popupweathericon {
+    text-align: center;
+}
+
+#tempicon {
+    position: relative;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    top: -77px;
+    right: calc(-48% + 42px);
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+#landinginfo {
+    background-image: url(/images/spacexmarker.png);
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: 10px center;
+}
+
+#thehague {
+    background-image: url(/images/refreshicon.png);
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: 10px center;
+}
+
+#dashboard {
+    background-image: url(/favicon.png);
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: 10px center;
+}
+
+#clock {
+    background-image: url(/images/clockicon.png);
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: 10px center;
+}
+
+section#right {
+    position: relative;
+    width: 100vw;
+    order: 1;
+    background-color:gray;
+    height: 100%;
+    margin:0;
+    padding:0;
+    left:0;
+}
+
+#map {
+    position: relative;
+    left:0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    color: black;
+    order: 2;
+      }
+
+#menu {
+    display: block;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #181C1F;
+    background-color: #181C1F;
+    outline:none;
+}
+
+#menu:hover {
+    background-color:#999999;
+}
+
+#menu div {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    position: relative;
+    left: 8px;
+    top: 7px;
+}
+
+#refresh {
+    position: relative;
+    background-image: url(/images/refreshicon.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    top: -44px;
+    right: calc(-48% + 42px);
+    margin: 0;
+    padding: 0;
+    border: 1px solid #181C1F;
+    background-color: #181C1F;
+    outline: none;
+}
+
+#refresh:active, #refresh:hover {
+    background-color:#999999;
+}
+
+.infoWrapper {
+    box-shadow: 0 0 50px 15px rgba(0, 204, 255, 0.5);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.infowindow {
+    background: url(/images/backgroundtexture1.png) repeat 100% 100%;
+    outline: none;
+    box-shadow: inset 0 0 50px 0 rgba(0, 204, 255, 0.5);
+    margin: 0 auto;
+    color: #69FDFF;
+    border: 1px dashed #29788c;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    padding: 25px;
+}
+
+.infowindow a, .infowindow a:visited, .infowindow a:active, .infowindow a:focus, .infowindow a:hover {
+    color: #69FDFF;
+    outline: none;
+    text-decoration: none;
+}
+
+#popUpWrapper {
+    display:none;
+    opacity: 0;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+#glow {
+    position: relative;
+    box-shadow: 0 0 50px 15px rgba(0, 204, 255, 0.5);
+    border-radius: 5px;
+    width: 100%;
+    height: inherit;
+    left: -50%;
+}
+
+#popUp {
+    background: url(/images/backgroundtexture1.png) repeat 100% 100%;
+    outline: none;
+    box-shadow: inset 0 0 50px 0 rgba(0, 204, 255, 0.5);
+    width: 65vw;
+    margin: 0 auto;
+    color: #69FDFF;
+    border: 1px dashed #29788c;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    padding: 25px;
+    position: relative;
+    left: 0;
+}
+
+#content {
+    text-transform: none;
+}
+
+#popUp h1 {
+    text-align: center;
+    font-size: 16px;
+}
+
+#popUp #content {
+    color: white;
+    text-align: left;
+}
+
+ .buttonWrapper {
+    position: relative;
+    border: 2px solid #266DA2;
+    -webkit-appearance: none;
+    background-color: #7BA9CE;
+    margin: 0 auto;
+    text-align: center;
+    width: 97px;
+    height: 44px;
+    box-shadow: 0 0px 17px 5px #2E6288;
+    top: 20px;
+    margin-bottom: 10px;
+ }
+
+  .buttonWrapper:active {
+    border-color:#00569c;
+    box-shadow: 1px 1px 17px 3px #2E6288;
+    background-color: #3376AF;
+  }
+
+  .buttonWrapper:active .okbutton {
+    box-shadow: 3px 3px 17px 5px #2E6288;
+    background-color: #3995E3;
+  }
+
+  .buttonWrapper:hover {
+    border-color:#00569c;
+    box-shadow: 1px 1px 17px 3px #2E6288;
+    background-color: #3995E3;
+  }
+
+  .buttonWrapper:hover .okbutton {
+    box-shadow: 3px 3px 17px 5px #2E6288;
+    background-color: #3995E3;
+  }
+
+ .okButton {
+    position: relative;
+    -webkit-appearance: none;
+    outline: none;
+    border: 5px solid transparent;
+    -webkit-appearance: none;
+    color: white;
+    background-color: #7BA9CE;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+    margin: 10px auto;
+    width: 80px;
+    height: 25px;
+    box-shadow: 0 0px 17px 5px #2E6288;
+    text-transform: uppercase;
+ }
+
+ .okButton:active {
+    box-shadow: 3px 3px 17px 5px #2E6288;
+    background-color: #72B7F2;
+ }
+
+  .gm-style p.place {
+    text-transform: capitalize;
+  }
+
+  .pokemonpic {
+    text-align: center;
+  }
+
+  .normaltext {
+    text-decoration: none;
+    color: white;
+  }
+
+  .gm-style .gm-style-iw img {
+    max-width: 150px;
+  }
+
+ body, header, main {
+    width: 100vw !important;
+    transition: none;
+ }
+
+  @media only screen and (max-width: 732px) and (orientation: landscape){
+
+    body, header, main {
+        width: 100vw !important;
+    }
+ }
+
+  @media only screen and (max-width: 640px) and (orientation: landscape){
+
+    body, header, main {
+        width: 100vw !important;
+     }
+ }
+
+  @media only screen and (max-width: 412px) and (orientation: portrait){
+
+    body, header, main {
+        width: 100vw !important;
+    }
+ }
+
+  @media only screen and (max-width: 360px) and (orientation: portrait){
+
+    body, header, main {
+        width: 100vw !important;
+    }
+ }
