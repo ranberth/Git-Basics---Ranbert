@@ -28,7 +28,7 @@ body {
     font-family:'Brandon Grotesque','brandon-grotesque',Helvetica,sans-serif;
     text-transform: uppercase;
     background-color:#070E12;
-    background: url(/images/backgroundGradient.png);
+    background: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/backgroundGradient.png);
     background-size: contain;
     background-repeat: repeat-x;
     color:#D4F6FF;
@@ -49,7 +49,7 @@ body {
     height: 44px;
     text-align: center;
     z-index: 0;
-    background-image: url('../images/spacexlogo.png');
+    background-image: url('https://ranberth.github.io/Git-Basics---Ranbert/maps/images/spacexlogo.png');
     background-size: auto 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -91,7 +91,7 @@ nav#left h2 {
     margin:0;
     padding:15px;
     font-size:16px;
-    background-image:url(/images/headericon.png);
+    background-image:url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/headericon.png);
     background-position: center;
     background-size:33%;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@ nav#left h3 {
     margin: 0;
     padding: 15px;
     font-size: 8px;
-    background-image: url(/images/spacexlogo.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/spacexlogo.png);
     background-position: center 45px;
     background-size: 33%;
     background-repeat: no-repeat;
@@ -169,14 +169,14 @@ nav#left ul li:active  {
 }
 
 #landinginfo {
-    background-image: url(/images/spacexmarker.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/spacexmarker.png);
     background-repeat: no-repeat;
     background-size: 23px;
     background-position: 10px center;
 }
 
 #thehague {
-    background-image: url(/images/refreshicon.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/refreshicon.png);
     background-repeat: no-repeat;
     background-size: 23px;
     background-position: 10px center;
@@ -190,7 +190,7 @@ nav#left ul li:active  {
 }
 
 #clock {
-    background-image: url(/images/clockicon.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/clockicon.png);
     background-repeat: no-repeat;
     background-size: 23px;
     background-position: 10px center;
@@ -245,7 +245,7 @@ section#right {
 
 #refresh {
     position: relative;
-    background-image: url(/images/refreshicon.png);
+    background-image: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/refreshicon.png);
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: center;
@@ -272,7 +272,7 @@ section#right {
 }
 
 .infowindow {
-    background: url(/images/backgroundtexture1.png) repeat 100% 100%;
+    background: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/backgroundtexture1.png) repeat 100% 100%;
     outline: none;
     box-shadow: inset 0 0 50px 0 rgba(0, 204, 255, 0.5);
     margin: 0 auto;
@@ -312,7 +312,7 @@ section#right {
 }
 
 #popUp {
-    background: url(/images/backgroundtexture1.png) repeat 100% 100%;
+    background: url(https://ranberth.github.io/Git-Basics---Ranbert/maps/images/backgroundtexture1.png) repeat 100% 100%;
     outline: none;
     box-shadow: inset 0 0 50px 0 rgba(0, 204, 255, 0.5);
     width: 65vw;
