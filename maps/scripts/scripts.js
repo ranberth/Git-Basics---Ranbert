@@ -442,7 +442,7 @@ function onAPISucces(response) {
 	var dateTime = new Date(response.list[0].dt_txt);
 	date = formDate(dateTime);
 	time = formTime(dateTime);
-	iconUrl = 'http://openweathermap.org/img/w/'+response.list[0].weather[0].icon+'.png';
+	iconUrl = 'https://openweathermap.org/img/w/'+response.list[0].weather[0].icon+'.png';
 
 	$("#tempicon").css("background-image","url("+iconUrl+")");
 	$("#temp").append(temp);
