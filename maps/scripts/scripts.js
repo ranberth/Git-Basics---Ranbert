@@ -175,10 +175,10 @@ function initTheMap(pokemon) {
 	contentPopUp[2] = 'Scheveningse Bosjes - Ten Vijverpad, Den Haag';
 	contentPopUp[3] = 'Ockenburg, Den Haag';
 
-	content[0] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[0] + '</p>'+temp+'</br><img class="placepic" src="images/malieveld.jpg" alt="'+contentPopUp[0]+'"/></div></div>';
-	content[1] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[1] + '</p>'+temp+'</br><img class="placepic" src="images/zuiderpark.jpg" alt="'+contentPopUp[1]+'"/></div></div>';
-	content[2] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[2] + '</p>'+temp+'</br><img class="placepic" src="images/tenvijverpad.jpg" alt="'+contentPopUp[2]+'"/></div></div>';
-	content[3] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[3] + '</p>'+temp+'</br><img class="placepic" src="images/ockenburg.jpg" alt="'+contentPopUp[3]+'"/></div></div>';
+	content[0] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[0] + '</p>'+temp+'</br><img class="placepic" src="https://ranberth.github.io/Git-Basics---Ranbert/maps/images/malieveld.jpg" alt="'+contentPopUp[0]+'"/></div></div>';
+	content[1] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[1] + '</p>'+temp+'</br><img class="placepic" src="https://ranberth.github.io/Git-Basics---Ranbert/maps/images/zuiderpark.jpg" alt="'+contentPopUp[1]+'"/></div></div>';
+	content[2] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[2] + '</p>'+temp+'</br><img class="placepic" src="https://ranberth.github.io/Git-Basics---Ranbert/maps/images/tenvijverpad.jpg" alt="'+contentPopUp[2]+'"/></div></div>';
+	content[3] = '<div class="infoWrapper"><div class="infowindow"><p class="place">' + contentPopUp[3] + '</p>'+temp+'</br><img class="placepic" src="https://ranberth.github.io/Git-Basics---Ranbert/maps/images/ockenburg.jpg" alt="'+contentPopUp[3]+'"/></div></div>';
 
 	locations = [
       [content[0], 52.085502, 4.319468, contentPopUp[0], 1],
@@ -226,7 +226,7 @@ function initTheMap(pokemon) {
 	x.addListener(zoom); // Attach listener function on state changes
 
     image = {
-	    url: 'http://maps.ranbert.com/images/spacexmarker.png',
+	    url: 'https://ranberth.github.io/Git-Basics---Ranbert/maps/images/spacexmarker.png',
 	    // This marker is 20 pixels wide by 32 pixels high.
 	    size: new google.maps.Size(20, 32),
 	    // The origin for this image is (0, 0).
@@ -236,7 +236,7 @@ function initTheMap(pokemon) {
 	  };
 
 	pokeball = {
-	    url: 'http://maps.ranbert.com/images/pokeball_icon.png',
+	    url: 'https://ranberth.github.io/Git-Basics---Ranbert/maps/images/pokeball_icon.png',
 	    // This marker is 20 pixels wide by 32 pixels high.
 	    size: new google.maps.Size(32, 32),
 	    // The origin for this image is (0, 0).
