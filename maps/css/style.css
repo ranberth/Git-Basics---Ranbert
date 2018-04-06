@@ -401,7 +401,15 @@ section#right {
  }
 
   .gm-style p.place {
+    background-color:#002B35;
+    border: 1px solid #181C1F;
+    border-radius: 25px;
     text-transform: capitalize;
+    color:white;
+    padding:7px;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
   }
 
   .pokemonpic {
@@ -411,10 +419,17 @@ section#right {
   .normaltext {
     text-decoration: none;
     color: white;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
   }
 
   .gm-style .gm-style-iw img {
     max-width: 150px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: -15px;
   }
 
  body, header, main {
