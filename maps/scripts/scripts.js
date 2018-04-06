@@ -372,7 +372,7 @@ function toggleBounce(map, marker) {
 
 
 function secondAPI(pokemon) {
-	fetch("//pokeapi.salestock.net/api/v2/pokemon/?limit=10147")
+	fetch("pokeapi.salestock.net/api/v2/pokemon/?limit=2")
 
 	// parse to JSON format
 	.then(function(response) {
@@ -392,7 +392,7 @@ function secondAPI(pokemon) {
 
 
 function firstAPI() {
-	fetch("http://api.openweathermap.org/data/2.5/forecast?q=the%20Hague,nl&units=metric&APPID=0e1fa79e84c1e49f820858649108a21c")
+	fetch("api.openweathermap.org/data/2.5/forecast?q=the%20Hague,nl&units=metric&APPID=0e1fa79e84c1e49f820858649108a21c")
 
 	// parse to JSON format
 	.then(function(response) {
