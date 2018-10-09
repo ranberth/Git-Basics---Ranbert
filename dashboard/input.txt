@@ -108,8 +108,7 @@
 180
 
 [journeystarted]
-Nov 27, 2017 15:00:00
-Jun 6, 2017 00:00:00
+Mar 18, 2018 15:00:00
 
 [journeyended]
 Feb 29, 2018 23:47:00
